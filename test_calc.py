@@ -12,6 +12,7 @@ class TestCalc(unittest.TestCase):
                 result = calc.sub(15, 10)
                 self.assertEqual(result,5)
         def test_mul(self):
+                print(self.value)
                 self.assertEqual(calc.mul(10, 5), 50)
                 self.assertEqual(calc.mul(-1, 1), -1)
                 self.assertEqual(calc.mul(-1, -1), 1)
