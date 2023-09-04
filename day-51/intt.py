@@ -11,10 +11,13 @@ class InternetSpeed:
         self.down = ''
     
     def get_internet_speed(self):
-        self.driver.get('https://www.speedtest.net/')
+        self.driver.get('https://www.speedtest.net')
+        time.sleep(5)
+        print('watin')
         go = self.driver.find_element('//*[@id="container"]/div/div[3]/div/div/div/div[2]/div[3]/div[1]/a')
+        print(go)
         go.click()
-        time.sleep(60)
+        # time.sleep(60)
         
 
         
