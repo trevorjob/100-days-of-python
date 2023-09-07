@@ -28,7 +28,7 @@ def get_letter():
         
 # 4. Send the letter generated in step 3 to that person's email address.
 def send_letter(letter):
-        with smtplib.SMTP("smtp.gmail.com", 587) as connection:
+        with smtplib.SMTP("smtp.gmail.com", 25) as connection:
                 connection.starttls()
                 connection.login(user=MY_EMAIL, password=PASSWORD)
                 connection.sendmail(from_addr=MY_EMAIL, to_addrs=TO_EMAIL, msg=f"Subject:HAPPY BIRTHDAY\n\n{letter}")
