@@ -20,9 +20,8 @@ from flask_sqlalchemy import SQLAlchemy
 from forms import CommentForm, CreatePostForm, LoginForm, RegisterForm
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
-from werkzeug.security import check_password_hash, generate_password_hash
-
 from twilio.rest import Client
+from werkzeug.security import check_password_hash, generate_password_hash
 
 API_KEY = "6e6df90dee7e0103aaf90c6d58b8a226"
 account_sid = "AC432d529261c943b35a841d281db3b3d5"
@@ -268,11 +267,11 @@ def contact():
         name = request.form["name"]
         email = request.form["email"]
         message = request.form["message"]
-        phone = request.form["phone"]
+        phonenum = request.form["phone"]
 
         client = Client(account_sid, auth_token)
         message = client.messages.create(
-            body=f"Hello Nandom\nfrom:{name}\n\nEmail: {email}\nphone: {phone}\n\n{message}",
+            body=f"Hello Nandom\nfrom:{name}\n\nEmail: {email}\nphone: {phonenum}\n\n{message}",
             from_="+17623095622",
             to="+2348104899622",
         )
